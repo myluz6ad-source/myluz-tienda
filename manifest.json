@@ -1,0 +1,22 @@
+{
+  "short_name": "MyLuz",
+  "name": "Bodega Digital MyLuz - Bucaramanga",
+  "icons": [
+    {
+      "src": "assets/img/logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "assets/img/logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "index.html",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "./",
+  "theme_color": "#2e7d32",
+  "description": "Tu bodega de confianza en Bucaramanga. Desarrollado por System Gregory PC."
+}
