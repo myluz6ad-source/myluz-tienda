@@ -1,1 +1,27 @@
+.categorias-menu {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    flex-wrap: wrap; /* Para que en celular se acomoden solos */
+}
 
+.btn-cat {
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.grano { background-color: #4caf50; }
+.aseo { background-color: #009688; }
+.lacteos { background-color: #8bc34a; }
+.combo { background-color: #ff9800; }
+
+.btn-cat:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
