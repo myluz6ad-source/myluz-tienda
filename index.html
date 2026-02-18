@@ -1,62 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#2e7d32">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Bodega - Bucaramanga</title>
-    <style>
-        <header style="text-align: center; padding: 20px; background-color: #f8f9fa;">
-    <img src="assets/img/logo.png" alt="Bodega MyLuz" style="width: 150px; height: auto;">
-    <h1 style="color: #2e7d32;">Bodega MyLuz</h1>
-</header>
+    <title>Bodega MyLuz - Bucaramanga</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2e7d32">
 
-<nav class="categorias-menu">
-    <button class="btn-cat grano">Grano</button>
-    <button class="btn-cat aseo">Aseo</button>
-    <button class="btn-cat lacteos">Lácteos</button>
-    <button class="btn-cat combo">Combo del Día</button>
-</nav>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f4f7f6; }
-        header { background: #2e7d32; color: white; padding: 1rem; text-align: center; }
+    <style>
+        /* CSS: Aquí solo va el diseño */
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f4f7f6; }
+        
+        header { background: #2e7d32; color: white; padding: 2rem; text-align: center; }
+        header img { width: 120px; height: auto; margin-bottom: 10px; border-radius: 50%; }
+
         .container { max-width: 1000px; margin: auto; padding: 20px; }
         
-        /* Sistema de Rejilla para Productos */
-        .grid-productos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-        
-        .card {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 15px;
-            text-align: center;
-            transition: transform 0.2s;
-        }
-        .card:hover { transform: translateY(-5px); }
-        .card img { max-width: 100%; border-radius: 5px; }
+        /* Menú de Categorías */
+        .categorias-menu { display: flex; justify-content: center; gap: 10px; padding: 15px; flex-wrap: wrap; }
+        .btn-cat { border: none; border-radius: 20px; padding: 10px 20px; color: white; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .grano { background-color: #4caf50; }
+        .aseo { background-color: #009688; }
+        .lacteos { background-color: #8bc34a; }
+        .combo { background-color: #ff9800; }
+        .btn-cat:hover { transform: scale(1.05); }
+
+        /* Rejilla de Productos */
+        .grid-productos { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
+        .card { background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 15px; text-align: center; }
+        .card img { max-width: 100%; height: 150px; object-fit: cover; border-radius: 5px; }
         .price { color: #2e7d32; font-weight: bold; font-size: 1.2rem; }
-        .btn-comprar {
-            background: #ff9800;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-        }
+        .btn-comprar { background: #ff9800; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; width: 100%; font-weight: bold; }
+        
+        footer { background-color: #222; color: white; padding: 30px; text-align: center; margin-top: 50px; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>La Bodega de My</h1>
+    <img src="assets/img/logo.png" alt="Logo MyLuz">
+    <h1>Bodega Digital MyLuz</h1>
     <p>Calidad del campo a Bucaramanga</p>
 </header>
+
+<nav class="categorias-menu">
+    <button class="btn-cat grano">Granos</button>
+    <button class="btn-cat aseo">Aseo</button>
+    <button class="btn-cat lacteos">Lácteos</button>
+    <button class="btn-cat combo">Combo del Día</button>
+</nav>
 
 <div class="container">
     <h2>Nuestros Víveres</h2>
@@ -85,14 +78,15 @@
     </div>
 </div>
 
-    <footer style="background-color: #222; color: white; padding: 20px; text-align: center; margin-top: 50px;">
+<footer>
     <p>&copy; 2024 <strong>Bodega Digital MyLuz</strong> - Bucaramanga, Santander</p>
     <p>Surtimos tu hogar con amor y puntualidad.</p>
-    <hr style="width: 50%; border: 0.5px solid #444;">
+    <hr style="width: 50%; border: 0.1px solid #444;">
     <p style="font-size: 0.8rem; color: #aaa;">
         Tecnología desarrollada por <strong>System Gregory PC</strong> <br>
         Bajo Licencia GNU GPL v3.0
     </p>
 </footer>
+
 </body>
 </html>
