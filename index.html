@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Bodega - Bucaramanga</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f4f7f6; }
+        header { background: #2e7d32; color: white; padding: 1rem; text-align: center; }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        
+        /* Sistema de Rejilla para Productos */
+        .grid-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card img { max-width: 100%; border-radius: 5px; }
+        .price { color: #2e7d32; font-weight: bold; font-size: 1.2rem; }
+        .btn-comprar {
+            background: #ff9800;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>La Bodega de My</h1>
+    <p>Calidad del campo a Bucaramanga</p>
+</header>
+
+<div class="container">
+    <h2>Nuestros Víveres</h2>
+    <div class="grid-productos">
+        <div class="card">
+            <img src="https://via.placeholder.com/150" alt="Arroz">
+            <h3>Arroz Premium</h3>
+            <p>Bulto 5kg</p>
+            <p class="price">$22.500</p>
+            <button class="btn-comprar">Agregar al Carrito</button>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/150" alt="Aceite">
+            <h3>Aceite de Girasol</h3>
+            <p>Litro 1000ml</p>
+            <p class="price">$12.000</p>
+            <button class="btn-comprar">Agregar al Carrito</button>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/150" alt="Café">
+            <h3>Café Santander</h3>
+            <p>Presentación 500g</p>
+            <p class="price">$18.900</p>
+            <button class="btn-comprar">Agregar al Carrito</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
