@@ -145,4 +145,13 @@
 </script>
 
 </body>
+    <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js')
+        .then(reg => console.log('App lista para instalar: System Gregory PC'))
+        .catch(err => console.log('Error en registro de App', err));
+    });
+  }
+</script>
 </html>
