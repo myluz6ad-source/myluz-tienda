@@ -1,0 +1,35 @@
+Guía de Uso: Bodega Digital MyLuz
+
+Guía de Uso: Bodega Digital MyLuz
+Soporte Técnico: System Gregory PC
+
+¡Hola Mirley y Luz! Esta guía les ayudará a mantener su tienda actualizada.
+
+1. ¿Cómo cambiar un Precio?
+Si el arroz sube o baja, busquen en el archivo index.html la línea que dice class="price".
+
+Antes: <p class="price">$22.500</p>
+
+Cambio: Solo borren el número y escriban el nuevo: <p class="price">$23.000</p>
+
+2. ¿Cómo poner un producto como AGOTADO?
+Si se les termina el aceite, busquen la "tarjeta" de ese producto en index.html y sigan estos pasos:
+
+En la primera línea de ese producto, agreguen la palabra prod-agotado.
+
+Ejemplo: <div class="card prod-agotado">
+
+Agreguen esta línea justo debajo para que salga el letrero rojo:
+
+<div class="badge-agotado">AGOTADO</div>
+
+Cambien el botón de WhatsApp por este:
+
+<button class="btn-comprar" style="background:#999;" disabled>No disponible</button>
+
+3. ¿Cómo cambiar la foto de un producto?
+Tomen la foto nueva con el celular (intenten que sea cuadrada).
+
+Guárdenla en la carpeta assets/img/ con el mismo nombre (ejemplo: arroz.jpg).
+
+¡Importante! El nombre debe ser exacto. Si la foto se llama ARROZ.JPG (en mayúsculas) y en el código dice arroz.jpg, no se verá.
