@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacer Pedido - Bodega MyLuz</title>
+    
+    <link rel="icon" type="image/x-icon" href="assets/img/logo.ico">
+    
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f4f7f6; color: #333; text-align: center; }
+        
+        header { background: #2e7d32; color: white; padding: 20px; }
+        
+        nav { background: #1b5e20; padding: 10px; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 0.9rem; }
+
+        .container { max-width: 600px; margin: 30px auto; padding: 20px; background: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        
+        .instrucciones { text-align: left; margin-bottom: 25px; line-height: 1.6; }
+        .instrucciones li { margin-bottom: 10px; }
+
+        .btn-whatsapp-grande {
+            background-color: #25d366;
+            color: white;
+            padding: 20px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
+        }
+        .btn-whatsapp-grande:hover { transform: scale(1.05); background-color: #128c7e; }
+        
+        .icono-wa { font-size: 1.5rem; margin-right: 10px; }
+
+        footer { margin-top: 50px; padding: 20px; font-size: 0.8rem; color: #777; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Central de Pedidos</h1>
+</header>
+
+<nav>
+    <a href="index.html">⬅ Volver a la Tienda</a>
+    <a href="pagos.html">¿Cómo Pagar?</a>
+</nav>
+
+<div class="container">
+    <img src="assets/img/logo.ico" alt="Logo" style="width: 80px; border-radius: 50%;">
+    <h2>¡Hola! Soy Mirley</h2>
+    <p>Sigue estos pasos para realizar tu compra con éxito:</p>
+    
+    <div class="instrucciones">
+        <ol>
+            <li><strong>Haz tu lista:</strong> Escribe los productos que viste en el catálogo.</li>
+            <li><strong>Envía el mensaje:</strong> Dale clic al botón verde de abajo.</li>
+            <li><strong>Confirma:</strong> Te responderé con el valor total y el tiempo de entrega.</li>
+        </ol>
+    </div>
+
+    <a href="https://wa.me/573204927134?text=Hola%20Mirley,%20vengo%20de%20la%20página%20web%20y%20quiero%20hacer%20este%20pedido:" 
+       class="btn-whatsapp-grande" target="_blank">
+        <span class="icono-wa">💬</span> Enviar mi pedido ahora
+    </a>
+
+    <p style="margin-top: 25px; font-size: 0.9rem; color: #666;">
+        📍 Atendemos en toda Bucaramanga.<br>
+        ⏰ Horario: 8:00 AM a 7:00 PM
+    </p>
+</div>
+
+<footer>
+    <p>Bodega Digital MyLuz - 2026</p>
+    <p>Desarrollado por System Gregory PC</p>
+</footer>
+
+</body>
+</html>
