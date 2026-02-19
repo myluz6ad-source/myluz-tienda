@@ -2,34 +2,97 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Pagos - Bodega MyLuz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medios de Pago - Bodega MyLuz</title>
+    
+    <link rel="icon" type="image/x-icon" href="assets/img/logo.ico">
+    
     <style>
-        body { font-family: sans-serif; background: #f4f7f6; text-align: center; padding: 20px; }
-        .metodo-card { background: white; padding: 20px; border-radius: 15px; margin: 20px auto; max-width: 400px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .nequi-color { border-top: 5px solid #702884; }
-        .efectivo-color { border-top: 5px solid #2e7d32; }
-        img { width: 100px; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f4f7f6; color: #333; }
+        
+        header { background: #2e7d32; color: white; padding: 20px; text-align: center; }
+        
+        nav { background: #1b5e20; padding: 10px; text-align: center; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 0.9rem; }
+
+        .container { max-width: 500px; margin: 30px auto; padding: 20px; }
+
+        /* Tarjetas de Pago */
+        .metodo-pago { 
+            background: white; 
+            border-radius: 15px; 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            text-align: center; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+        }
+
+        .nequi { border-top: 8px solid #702884; }
+        .efectivo { border-top: 8px solid #2e7d32; }
+
+        .logo-pago { width: 120px; margin-bottom: 15px; }
+        .numero-cuenta { 
+            font-size: 1.8rem; 
+            font-weight: bold; 
+            color: #702884; 
+            background: #f3e5f5; 
+            padding: 10px; 
+            border-radius: 10px; 
+            display: block;
+            margin: 15px 0;
+        }
+
+        .instruccion { font-size: 0.9rem; color: #666; font-style: italic; }
+
+        .btn-regresar {
+            display: inline-block;
+            margin-top: 20px;
+            color: #2e7d32;
+            text-decoration: none;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
-    <h1>¿Cómo pagar tu pedido?</h1>
+
+<header>
+    <h1>Medios de Pago</h1>
+</header>
+
+<nav>
+    <a href="index.html">🏠 Tienda</a>
+    <a href="pedidos.html">🛒 Pedidos</a>
+</nav>
+
+<div class="container">
     
-    <div class="metodo-card nequi-color">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Logo_Nequi-Panama.png" alt="Nequi">
-        <h3>Transferencia Nequi</h3>
-        <p>Envía al número:</p>
-        <h2 style="color: #702884;">57 321  9543632</h2>
-        <p style="font-size: 0.8rem; color: #666;">Envía el comprobante por WhatsApp</p>
+    <div class="metodo-pago nequi">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Logo_Nequi-Panama.png" alt="Nequi" class="logo-pago">
+        <p>Realiza tu transferencia al número:</p>
+        <span class="numero-cuenta">320 492 7134</span>
+        <p class="instruccion">Por favor, envía el comprobante por WhatsApp después de pagar.</p>
     </div>
 
-    <div class="metodo-card efectivo-color">
-        <span style="font-size: 3rem;">💵</span>
-        <h3>Efectivo</h3>
-        <p>Paga al recibir tus productos en la puerta de tu casa.</p>
+    <div class="metodo-pago efectivo">
+        <div style="font-size: 3rem;">💵</div>
+        <h2>Pago Contra Entrega</h2>
+        <p>Puedes pagar en efectivo cuando recibas tu pedido en la puerta de tu casa.</p>
+        <p class="instruccion">Bucaramanga y Área Metropolitana.</p>
     </div>
 
-    <a href="index.html">⬅️ Volver a la tienda</a>
+    <div style="text-align: center;">
+        <a href="index.html" class="btn-regresar">⬅ Volver al catálogo de productos</a>
+    </div>
+
+</div>
+
+<footer>
+    <p style="text-align: center; color: #aaa; font-size: 0.8rem; margin-top: 40px;">
+        Bodega Digital MyLuz - Bucaramanga<br>
+        Seguridad garantizada por System Gregory PC
+    </p>
+</footer>
+
 </body>
 </html>
-  
