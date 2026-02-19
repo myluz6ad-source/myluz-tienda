@@ -10,14 +10,11 @@
     <meta name="theme-color" content="#2e7d32">
 
     <style>
-        /* --- ESTILOS DE DISEÑO --- */
+        /* --- ESTILOS DE DISEÑO (Se mantienen tus estilos originales) --- */
         body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f4f7f6; color: #333; }
-        
-        /* Encabezado */
         header { background: #2e7d32; color: white; padding: 2.5rem 1rem; text-align: center; }
         .logo-principal { width: 120px; height: 120px; border-radius: 50%; border: 4px solid white; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
 
-        /* Navegación Fija */
         .categorias-menu { 
             display: flex; justify-content: center; gap: 10px; padding: 15px; 
             flex-wrap: wrap; position: sticky; top: 0; background: #f4f7f6; 
@@ -29,27 +26,21 @@
         .pago-link { background-color: #ff9800; }
         .btn-cat:hover { transform: scale(1.05); filter: brightness(1.1); }
 
-        /* Buscador */
         .search-container { text-align: center; padding: 20px; }
         #buscador { width: 90%; max-width: 450px; padding: 12px 20px; border-radius: 30px; border: 2px solid #2e7d32; outline: none; font-size: 1rem; }
 
-        /* Rejilla de Productos */
         .container { max-width: 1100px; margin: auto; padding: 10px; }
         .grid-productos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
         
-        /* Tarjeta de Producto */
         .card { background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); padding: 15px; text-align: center; position: relative; transition: 0.3s; }
         .card:hover { transform: translateY(-5px); }
         .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; }
         .price { color: #2e7d32; font-weight: bold; font-size: 1.3rem; margin: 10px 0; }
         
-        /* Estado Agotado */
         .prod-agotado img { filter: grayscale(1); opacity: 0.5; }
         .badge-agotado { position: absolute; top: 10px; left: 10px; background: #ff5252; color: white; padding: 5px 10px; border-radius: 5px; font-size: 0.7rem; font-weight: bold; }
 
         .btn-comprar { background: #25d366; color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; width: 100%; font-weight: bold; text-decoration: none; display: inline-block; }
-
-        /* Botón WhatsApp Flotante */
         .wsp-flotante { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); text-decoration: none; z-index: 2000; }
 
         footer { background-color: #222; color: white; padding: 40px 20px; text-align: center; margin-top: 50px; }
@@ -75,32 +66,7 @@
 
 <div class="container">
     <div class="grid-productos" id="lista-productos">
-        
-        <div class="card">
-            <img src="assets/img/arroz.jpg" alt="Arroz">
-            <h3>Arroz Premium</h3>
-            <p>Bulto 5kg</p>
-            <p class="price">$22.500</p>
-            <a href="https://wa.me/573204927134?text=Hola%20Mirley,%20quiero%20pedir%20Arroz%20Premium" class="btn-comprar" target="_blank">Pedir WhatsApp</a>
-        </div>
-
-        <div class="card">
-            <img src="assets/img/aceite.jpg" alt="Aceite">
-            <h3>Aceite de Girasol</h3>
-            <p>Litro 1000ml</p>
-            <p class="price">$12.000</p>
-            <a href="https://wa.me/573204927134?text=Hola%20Mirley,%20quiero%20pedir%20Aceite%20de%20Girasol" class="btn-comprar" target="_blank">Pedir WhatsApp</a>
-        </div>
-
-        <div class="card prod-agotado">
-            <div class="badge-agotado">AGOTADO</div>
-            <img src="assets/img/cafe.jpg" alt="Café">
-            <h3>Café Santander</h3>
-            <p>Bolsa 500g</p>
-            <p class="price">$18.900</p>
-            <button class="btn-comprar" style="background:#999;" disabled>No disponible</button>
-        </div>
-
+        <p style="text-align: center; grid-column: 1/-1;">Cargando productos de la bodega...</p>
     </div>
 </div>
 
@@ -112,15 +78,70 @@
 </footer>
 
 <script>
+    // Tu enlace de Google Sheets en formato CSV
+    const URL_EXCEL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTbkWHNRBJ1o0EoxW_gEfM0tD8YDt4W1u4Hy6VXcFgEAT6wEAj4AfpBUmXVuknvXUtewKcv0_D7kGhB/pub?output=csv";
+
+    async function cargarProductosDesdeExcel() {
+        try {
+            const respuesta = await fetch(URL_EXCEL);
+            const datos = await respuesta.text();
+            
+            // Convertimos el CSV en filas, quitando la cabecera (fila 1)
+            const filas = datos.split("\n").slice(1);
+            const contenedor = document.getElementById('lista-productos');
+            contenedor.innerHTML = ""; 
+
+            filas.forEach(fila => {
+                // Separamos por comas (usando Regex por si hay comas dentro de textos)
+                const columnas = fila.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+                
+                if (columnas.length >= 4) {
+                    const nombre = columnas[0].replace(/"/g, "").trim();
+                    const descripcion = columnas[1].replace(/"/g, "").trim();
+                    const precio = columnas[2].replace(/"/g, "").trim();
+                    const imagen = columnas[3].replace(/"/g, "").trim();
+                    // Columna 5 para saber si está agotado (opcional)
+                    const estado = columnas[4] ? columnas[4].trim().toLowerCase() : "";
+
+                    if (nombre !== "") {
+                        const esAgotado = estado === "agotado";
+                        
+                        contenedor.innerHTML += `
+                            <div class="card ${esAgotado ? 'prod-agotado' : ''}">
+                                ${esAgotado ? '<div class="badge-agotado">AGOTADO</div>' : ''}
+                                <img src="${imagen}" alt="${nombre}" onerror="this.src='assets/img/logo.ico'">
+                                <h3>${nombre}</h3>
+                                <p>${descripcion}</p>
+                                <p class="price">${precio}</p>
+                                <a href="${esAgotado ? '#' : 'https://wa.me/573204927134?text=Hola%20Mirley,%20quiero%20pedir%20' + nombre}" 
+                                   class="btn-comprar" 
+                                   style="${esAgotado ? 'background:#999; cursor:not-allowed;' : ''}"
+                                   ${esAgotado ? 'onclick="return false;"' : 'target="_blank"'}>
+                                   ${esAgotado ? 'No disponible' : 'Pedir WhatsApp'}
+                                </a>
+                            </div>
+                        `;
+                    }
+                }
+            });
+        } catch (error) {
+            console.error("Error:", error);
+            document.getElementById('lista-productos').innerHTML = "<p>Error al cargar el inventario.</p>";
+        }
+    }
+
+    // Buscador
     function filtrarProductos() {
         let input = document.getElementById('buscador').value.toLowerCase();
         let tarjetas = document.getElementsByClassName('card');
-
         for (let i = 0; i < tarjetas.length; i++) {
             let nombre = tarjetas[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
             tarjetas[i].style.display = nombre.includes(input) ? "block" : "none";
         }
     }
+
+    // Iniciar carga al abrir la página
+    cargarProductosDesdeExcel();
 </script>
 
 </body>
