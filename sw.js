@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bodega-myluz-v1';
+const CACHE_NAME = 'bodega-myluz-v2';
 const ASSETS = [
   'index.html',
   'pedidos.html',
